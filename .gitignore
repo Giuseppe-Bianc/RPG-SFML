@@ -31,3 +31,4 @@
 *.out
 *.app
 /.vs/RPG-SFML/v17
+/bin
