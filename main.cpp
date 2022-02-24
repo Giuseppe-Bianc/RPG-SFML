@@ -17,7 +17,6 @@ int main(){
 	sf::RectangleShape rectangle(sf::Vector2f(200, 20));
 	rectangle.setPosition(sf::Vector2f(300, 100));
 	rectangle.setFillColor(sf::Color::Blue);
-	
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
