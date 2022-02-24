@@ -1,11 +1,9 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "Struct.h"
 
 int main(){
-	//-------------------------------- INITIALIZE --------------------------------
-
+	Log::Init();
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 	sf::RenderWindow window(sf::VideoMode(wdta.w, wdta.h), wdta.t, sf::Style::Default, settings);
@@ -19,27 +17,20 @@ int main(){
 	sf::RectangleShape rectangle(sf::Vector2f(200, 20));
 	rectangle.setPosition(sf::Vector2f(300, 100));
 	rectangle.setFillColor(sf::Color::Blue);
-	//rectangle.setOrigin(rectangle.getSize() / 2.0f);
-	//rectangle.setRotation(45);
-
-	//-------------------------------- INITIALIZE --------------------------------
-
-	//main game loop
-	while (window.isOpen()){
-		//-------------------------------- UPDATE --------------------------------
+	
+	while (window.isOpen()) {
 		sf::Event event;
-		while (window.pollEvent(event)){
-			if (event.type == sf::Event::Closed) window.close();
+		while (window.pollEvent(event)) {
+			if (event.type == sf::Event::Closed) {
+				CORE_INFO("chiusura programma in risposta a solleciatazione");
+				window.close();
+			}
 		}
-		//-------------------------------- UPDATE --------------------------------
 
-		//-------------------------------- DRAW --------------------------------
 		window.clear(sf::Color::Black);
 		window.draw(shape);
 		window.draw(rectangle);
 		window.display();
-		//-------------------------------- DRAW --------------------------------
 	}
-
 	return 0;
 }
