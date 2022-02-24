@@ -22,8 +22,8 @@ int main(){
 		sf::Event event;
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed) {
-				CORE_INFO("chiusura programma in risposta a solleciatazione");
-				window.close();
+				TIME_ITSNL(window.close());
+				CORE_INFO("chiusura programma in risposta a solleciatazione, tempo chiusura = {} us ({:7.9} ms)",getTime().duration, getTime().ms);
 			}
 		}
 

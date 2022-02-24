@@ -1,3 +1,3 @@
 #RPG-SFML
 
-a simple 2D rpg based game that use SFML as rendering softwer
+A simple 2D RPG based game that use SFML as rendering softwer
