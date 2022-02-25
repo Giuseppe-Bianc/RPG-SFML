@@ -1,10 +1,5 @@
 #pragma once
-
-#include <iostream>
-#include <ctime>
-#include <cstdlib>
-#include <SFML/Graphics.hpp>
-#include "Struct.h"
+#include "State.h"
 
 
 class Game{
