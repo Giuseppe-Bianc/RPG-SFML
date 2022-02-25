@@ -13,8 +13,11 @@ private:
 	sf::ContextSettings settings;
 	sf::RenderWindow* window;
 	sf::Event sfevent;
+	sf::Clock dtClock;
+	float dt;
 	//intialization
 	void initWindow();
+	void updateDt();
 public:
 	//constructors/distructors
 	Game();

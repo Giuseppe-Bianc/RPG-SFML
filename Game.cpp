@@ -9,6 +9,12 @@ void Game::initWindow(){
 	window = new sf::RenderWindow( sf::VideoMode(wdta.w, wdta.h), wdta.t, sf::Style::Default, settings);
 }
 
+void Game::updateDt(){
+	this->dt = this->dtClock.restart().asSeconds();
+	system("cls");
+	CORE_TRACE("{}\n",this->dt);
+}
+
 //constructors/distructors
 Game::Game() {
 	Log::Init();
@@ -44,6 +50,7 @@ void Game::render(){
 void Game::run(){
 
 	while (this->window->isOpen()) {
+		this->updateDt();
 		this->update();
 		this->render();
 	}

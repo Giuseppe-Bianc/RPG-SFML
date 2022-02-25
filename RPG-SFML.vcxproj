@@ -164,11 +164,13 @@
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="State.cpp" />
     <ClCompile Include="Struct.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
