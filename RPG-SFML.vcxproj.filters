@@ -18,6 +18,7 @@
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
     <None Include="README.md" />
+    <None Include="Config\window.ini" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -35,6 +36,9 @@
     <ClCompile Include="State.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Struct.h">
@@ -47,6 +51,9 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

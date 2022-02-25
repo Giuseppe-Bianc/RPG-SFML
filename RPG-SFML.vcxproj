@@ -159,10 +159,12 @@
   <ItemGroup>
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
+    <None Include="Config\window.ini" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Struct.cpp" />
@@ -170,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="Timer.h" />
