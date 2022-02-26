@@ -9,14 +9,21 @@ GameState::~GameState() {
 }
 
 void GameState::endState(){
+	CORE_TRACE("ending gameState\n");
+}
 
+void GameState::updateKeybindigs(const float& dt){
+	this->checkForQuit();
 }
 
 void GameState::update(const float& dt){
-	system("cls");
-	CORE_TRACE("hello from game state\n");
+	this->updateKeybindigs(dt);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		CORE_TRACE("A\n");
+	}
 }
 
 void GameState::render(sf::RenderTarget* target){
-
+	(void)target;
+	
 }

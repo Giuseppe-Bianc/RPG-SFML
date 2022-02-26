@@ -71,7 +71,17 @@ void Game::updateSFMLEvents(){
 
 void Game::update(){
 	updateSFMLEvents();
-	if (!this->states.empty()) this->states.top()->update(this->dt);
+	if (!this->states.empty()) {
+		this->states.top()->update(this->dt);
+		if (this->states.top()->getQuit()) {
+			this->states.top()->endState();
+			delete this->states.top();
+			this->states.pop();
+		}
+	} else {
+		TIME_ITSNL(this->window->close());
+		CORE_TRACE("chiusura programma in risposta a states.top()->getQuit(), tempo chiusura = {} us ({:7.9} ms)", getTime().duration, getTime().ms);
+	}
 }
 
 void Game::render(){
