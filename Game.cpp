@@ -63,8 +63,7 @@ Game::~Game(){
 void Game::updateSFMLEvents(){
 	while (this->window->pollEvent(this->sfevent)) {
 		if (this->sfevent.type == sf::Event::Closed) {
-			TIME_ITSNL(this->window->close());
-			CORE_INFO("chiusura programma in risposta a solleciatazione, tempo chiusura = {} us ({:7.9} ms)", getTime().duration, getTime().ms);
+			CORE_TIMESN_TRACE(this->window->close(), "chiusura programma in risposta a solleciatazione, tempo chiusura = {} us ({:7.9} ms)", getTime().duration, getTime().ms);
 		}
 	}
 }
@@ -79,8 +78,7 @@ void Game::update(){
 			this->states.pop();
 		}
 	} else {
-		TIME_ITSNL(this->window->close());
-		CORE_TRACE("chiusura programma in risposta a states.top()->getQuit(), tempo chiusura = {} us ({:7.9} ms)", getTime().duration, getTime().ms);
+		CORE_TIMESN_TRACE(this->window->close(), "chiusura programma in risposta a states.top()->getQuit(), tempo chiusura = {} us ({:7.9} ms)", getTime().duration, getTime().ms);
 	}
 }
 

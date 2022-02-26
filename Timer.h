@@ -58,3 +58,14 @@ private:
 #define CORE_FATAL(...) Log::GetCoreLogger()->fatal(__VA_ARGS__)
 #define APP_FATAL(...)  Log::GetUserLogger()->fatal(__VA_ARGS__)
 
+#define CORE_TIMESN_TRACE(x,...) TIME_ITSNL(x) Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define APP_TIMESN_TRACE(x,...)  TIME_ITSNL(x) Log::GetUserLogger()->trace(__VA_ARGS__)
+#define CORE_TIMESN_INFO(x,...)  TIME_ITSNL(x) Log::GetCoreLogger()->info(__VA_ARGS__)
+#define APP_TIMESN_INFO(x,...)   TIME_ITSNL(x) Log::GetUserLogger()->info(__VA_ARGS__)
+#define CORE_TIMESN_WARN(x,...)  TIME_ITSNL(x) Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define APP_TIMESN_WARN(x,...)   TIME_ITSNL(x) Log::GetUserLogger()->warn(__VA_ARGS__)
+#define CORE_TIMESN_ERROR(x,...) TIME_ITSNL(x) Log::GetCoreLogger()->error(__VA_ARGS__)
+#define APP_TIMESN_ERROR(x,...)  TIME_ITSNL(x) Log::GetUserLogger()->error(__VA_ARGS__)
+#define CORE_TIMESN_FATAL(x,...) TIME_ITSNL(x) Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define APP_TIMESN_FATAL(x,...)  TIME_ITSNL(x) Log::GetUserLogger()->fatal(__VA_ARGS__)
+

@@ -13,6 +13,7 @@ void GameState::endState(){
 }
 
 void GameState::updateKeybindigs(const float& dt){
+	(void)dt;
 	this->checkForQuit();
 }
 
