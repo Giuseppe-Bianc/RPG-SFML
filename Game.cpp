@@ -36,6 +36,7 @@ void Game::initstates(){
 	this->states.push(new GameState(this->window));
 }
 
+
 void Game::updateDt(){
 	this->dt = this->dtClock.restart().asSeconds();
 	/*system("cls");
@@ -59,6 +60,9 @@ Game::~Game(){
 }
 
 //function
+void Game::endAplication(){
+	CORE_TRACE("ciusura Programma\n");
+}
 
 void Game::updateSFMLEvents(){
 	while (this->window->pollEvent(this->sfevent)) {
@@ -78,6 +82,7 @@ void Game::update(){
 			this->states.pop();
 		}
 	} else {
+		this->endAplication();
 		CORE_TIMESN_TRACE(this->window->close(), "chiusura programma in risposta a states.top()->getQuit(), tempo chiusura = {} us ({:7.9} ms)", getTime().duration, getTime().ms);
 	}
 }

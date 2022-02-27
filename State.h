@@ -1,13 +1,5 @@
 #pragma once
-#include <vector>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <ctime>
-#include <cstdlib>
-#include <stack>
-#include <map>
-#include "Struct.h"
+#include "Entity.h"
 
 class State {
 private:
