@@ -11,14 +11,18 @@
 #include "Struct.h"
 
 class Entity{
+private:
+
+protected:
+	sf::RectangleShape shape;
+	float movementSpeed = 0;
 public:
 	Entity();
 	
 	virtual ~Entity();
-	virtual void update(const float& dt) = 0;
-	virtual void render(sf::RenderTarget* target = nullptr) = 0;
-private:
-
+	virtual void move(const float& dt, const float dir_x, const float dir_y);
+	virtual void update(const float& dt);
+	virtual void render(sf::RenderTarget* target = nullptr);
 };
 
 

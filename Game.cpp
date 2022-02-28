@@ -6,10 +6,7 @@
 
 void Game::initWindow(){
 	settings.antialiasingLevel = 8;
-	/*this->window = new sf::RenderWindow( sf::VideoMode(wdta.w, wdta.h), wdta.t, sf::Style::Default, settings);
-	this->window->setFramerateLimit(120);
-	this->window->setVerticalSyncEnabled(false);*/
-
+	
 	std::ifstream ifs("Config/window.ini");
 
 	std::string title = "None";
@@ -32,8 +29,28 @@ void Game::initWindow(){
 
 }
 
-void Game::initstates(){
-	this->states.push(new GameState(this->window));
+void Game::initKeys() {
+	std::ifstream ifs("Config/supported_keys.ini");
+
+	if (ifs.is_open()) {
+		std::string key = "";
+		int key_value = 0;
+
+		while (ifs >> key >> key_value) {
+			this->supportedKeys[key] = key_value;
+		}
+	}
+
+	ifs.close();
+
+	//DEBUG REMOVE LATER!
+	for (auto& i : this->supportedKeys) {
+		std::cout << i.first << " " << i.second << "\n";
+	}
+}
+
+void Game::initStates(){
+	this->states.push(new MainMenuState(this->window, &this->supportedKeys));
 }
 
 
@@ -47,7 +64,8 @@ void Game::updateDt(){
 Game::Game() {
 	Log::Init();
 	this->initWindow();
-	this->initstates();
+	this->initKeys();
+	this->initStates();
 }
 
 Game::~Game(){
@@ -60,7 +78,7 @@ Game::~Game(){
 }
 
 //function
-void Game::endAplication(){
+void Game::endApplication() {
 	CORE_TRACE("ciusura Programma\n");
 }
 
@@ -82,7 +100,7 @@ void Game::update(){
 			this->states.pop();
 		}
 	} else {
-		this->endAplication();
+		this->endApplication();
 		CORE_TIMESN_TRACE(this->window->close(), "chiusura programma in risposta a states.top()->getQuit(), tempo chiusura = {} us ({:7.9} ms)", getTime().duration, getTime().ms);
 	}
 }
@@ -95,10 +113,11 @@ void Game::render(){
 }
 
 void Game::run(){
-
+	
 	while (this->window->isOpen()) {
 		this->updateDt();
 		this->update();
 		this->render();
 	}
 }
+

@@ -25,7 +25,7 @@ const STime getTime();
 
 class Timer {
 public:
-	Timer(bool fromClass);
+	explicit Timer(bool fromClass);
 	~Timer();
 	void stop();
 private:

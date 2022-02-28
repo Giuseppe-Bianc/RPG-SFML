@@ -7,9 +7,10 @@
 #include <SFML/Network.hpp>
 #include "Timer.h"
 
-typedef struct WDATA {
-	static const unsigned int w = 800, h = 600;
+using WDATA = struct WDATA {
+	static const unsigned int w = 800;
+	static const unsigned int h = 600;
 	const char* t = "RPG Game";
-} WDATA;
+};
 
 const WDATA wdta;

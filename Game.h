@@ -1,5 +1,5 @@
 #pragma once
-#include "GameState.h"
+#include "MainMenuState.h"
 
 
 class Game{
@@ -12,16 +12,19 @@ private:
 	float dt;
 
 	std::stack<State*> states;
+	std::map<std::string, int> supportedKeys;
 	//intialization
 	void initWindow();
-	void initstates();
+	void initKeys();
+	void initStates();
+
 public:
 	//constructors/distructors
 	Game();
 	virtual ~Game();
 
 	//funcition
-	void endAplication();
+	void endApplication();
 	void updateDt();
 	void updateSFMLEvents();
 	void update();
