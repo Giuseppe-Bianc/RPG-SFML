@@ -26,6 +26,7 @@ const STime getTime(){
 
 shared_ptr<logger> Log::s_CoreLogger;
 shared_ptr<logger> Log::s_UserLogger;
+shared_ptr<logger> Log::s_UserBLogger;
 
 
 void Log::Init() {
@@ -34,6 +35,10 @@ void Log::Init() {
 	s_CoreLogger->set_level(level::trace);
 
 	s_UserLogger = stdout_color_mt("APP");
+	s_UserLogger->set_level(level::trace);
+
+	set_pattern("%^%n: %v%$");
+	s_UserLogger = stdout_color_mt("GERMINY");
 	s_UserLogger->set_level(level::trace);
 }
 
